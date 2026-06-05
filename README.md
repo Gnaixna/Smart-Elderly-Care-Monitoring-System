@@ -1,7 +1,3 @@
-# 欢迎使用你的秒哒应用代码包
-秒哒应用链接
-    URL:https://www.miaoda.cn/projects/app-c3w40cy9jqwx
-
 # Project Overview
 
 This repository is a Taro + React + TypeScript starter project for WeChat Mini-Programs and mobile H5, styled with Tailwind CSS and managed via pnpm.
