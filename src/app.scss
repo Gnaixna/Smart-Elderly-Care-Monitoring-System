@@ -1,0 +1,107 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    /* 医疗青主色系 */
+    --primary: 174 84% 32%;           /* #0D9488 医疗青 */
+    --primary-glow: 174 60% 50%;      /* 浅青色变体 */
+    --primary-foreground: 0 0% 100%;
+
+    --background: 210 20% 98%;        /* 暖灰白 #F8FAFC */
+    --foreground: 215 28% 7%;         /* 深石板灰 #0F172A */
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 7%;
+
+    --secondary: 174 20% 93%;
+    --secondary-foreground: 174 84% 25%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 40%;  /* 中灰 #64748B */
+
+    --accent: 174 84% 95%;
+    --accent-foreground: 174 84% 25%;
+
+    --destructive: 0 73% 51%;         /* 警示红 #DC2626 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 174 84% 32%;
+    --radius: 0.5rem;
+
+    /* 图表颜色 */
+    --chart-1: 174 84% 32%;
+    --chart-2: 0 73% 51%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 197 71% 52%;
+    --chart-5: 270 66% 58%;
+
+    /* 渐变 */
+    --gradient-primary: linear-gradient(135deg, hsl(174 84% 32%), hsl(174 60% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(174 20% 97%), hsl(210 20% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(174 84% 28%), hsl(197 71% 42%));
+    --shadow-card: 0 2px 12px -2px hsl(174 84% 32% / 0.12);
+    --shadow-alert: 0 4px 20px -4px hsl(0 73% 51% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 215 16% 40%;
+    --sidebar-primary: 174 84% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 20% 93%;
+    --sidebar-accent-foreground: 174 84% 25%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 174 84% 32%;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-alert {
+    box-shadow: var(--shadow-alert);
+  }
+  /* 告警卡片动画 */
+  @keyframes alarm-flash {
+    0%, 100% { background-color: hsl(0 73% 97%); }
+    50% { background-color: hsl(0 73% 94%); }
+  }
+  .alarm-flash {
+    animation: alarm-flash 0.5s ease-in-out infinite;
+  }
+  /* 在线绿点呼吸 */
+  @keyframes breathe {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .breathe {
+    animation: breathe 2s ease-in-out infinite;
+  }
+  /* 按钮按压 */
+  .btn-press {
+    transition: transform 0.1s ease;
+  }
+  .btn-press:active {
+    transform: scale(0.96);
+  }
+}
